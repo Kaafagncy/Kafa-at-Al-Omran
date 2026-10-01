@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دراسة السوق والتحليل التنافسي والخطة التسويقية — شركة كفاءة العمران للاستشارات الهندسية | مجموعة كاف لتطوير الأعمال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kaaf-navy: #040914;
+            --kaaf-navy-surface: #0a1128;
+            --kaaf-blue: #3B82F6;
+            --kaaf-blue-light: #60A5FA;
+            --kaaf-indigo: #6366F1;
+            --kaaf-purple: #8B5CF6;
+            --saudi-gold: #D4AF37;
+            --saudi-gold-light: #FCD34D;
+            --saudi-gold-glow: rgba(212, 175, 55, 0.4);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--kaaf-navy);
+            color: #F8FAFC;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fixed Background Canvas */
+        .bg-canvas-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -20;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.4) contrast(1.2) saturate(1.1);
+            transform: scale(1.02);
+        }
+
+        /* Dynamic Mesh Background Overlay */
+        .bg-canvas-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+            background: 
+                radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(139, 92, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(4, 9, 20, 0.88) 0%, rgba(10, 17, 40, 0.94) 50%, rgba(2, 6, 16, 0.98) 100%);
+            backdrop-filter: blur(8px);
+            pointer-events: none;
+        }
+
+        /* Shimmer Banner Animation */
+        @keyframes shimmerGlow {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .gold-shimmer-text {
+            background: linear-gradient(90deg, #FCD34D 0%, #FFFFFF 25%, #D4AF37 50%, #FFFFFF 75%, #FCD34D 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shimmerGlow 4s linear infinite;
+        }
+
+        /* Enhanced Dynamic Motion Keyframes */
+        @keyframes moveDivider {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlowRing {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(59, 130, 246, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(59, 130, 246, 0.7), 0 0 50px rgba(212, 175, 55, 0.5);
+            }
+        }
+
+        @keyframes floatSubtle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
+        }
+
+        @keyframes badgeShimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        /* Colorful Section Divider Lines with Motion */
+        .section-divider {
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #D4AF37, #3B82F6, #8B5CF6, #EC4899, #D4AF37, transparent);
+            background-size: 200% 100%;
+            animation: moveDivider 4s ease infinite;
+            border-radius: 9999px;
+            margin: 3rem 0;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(59, 130, 246, 0.5);
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '♦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FCD34D;
+            background-color: var(--kaaf-navy);
+            padding: 0 12px;
+            font-size: 12px;
+            animation: pulseGlowRing 2.5s infinite;
+            border-radius: 50%;
+        }
+
+        /* Motion Enhanced Card Styles */
+        .card-dark {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(10, 17, 40, 0.88));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            animation: pulseGlowRing 6s infinite ease-in-out;
+        }
+
+        .card-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3B82F6, var(--saudi-gold), #8B5CF6, transparent);
+            animation: badgeShimmer 3.5s infinite linear;
+        }
+
+        .card-dark:hover {
+            border-color: rgba(212, 175, 55, 0.9);
+            box-shadow: 0 30px 60px -10px rgba(59, 130, 246, 0.45), 0 0 40px rgba(212, 175, 55, 0.35);
+            transform: translateY(-6px) scale(1.008);
+        }
+
+        .card-inner {
+            background: linear-gradient(135deg, rgba(11, 19, 43, 0.88), rgba(7, 13, 30, 0.85));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.7);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-inner:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--kaaf-blue);
+            box-shadow: 0 16px 35px rgba(59, 130, 246, 0.4), 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .motion-item {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .motion-item:hover {
+            transform: translateX(-6px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+        }
+
+        /* Scroll Reveal Motion Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px) scale(0.96) rotateX(8deg);
+            perspective: 1000px;
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+        }
+
+        .pulse-badge {
+            animation: floatSubtle 3s ease-in-out infinite;
+        }
+
+        /* Header Gradient Bar */
+        .gradient-header {
+            background: linear-gradient(135deg, rgba(4, 9, 20, 0.95), rgba(30, 58, 138, 0.92), rgba(15, 23, 42, 0.94), rgba(88, 28, 135, 0.95));
+            background-size: 300% 300%;
+            animation: kaafNavGradient 12s ease infinite;
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.8);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(59, 130, 246, 0.25);
+        }
+
+        @keyframes kaafNavGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.45);
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes floatGlowKaaf {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
+            }
+            50% {
+                transform: translateY(-8px) scale(1.04);
+                filter: drop-shadow(0 0 25px rgba(96, 165, 250, 0.95)) drop-shadow(0 0 35px rgba(252, 211, 77, 0.7));
+            }
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+
+        .floating-logo-container {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 9999;
+            animation: floatGlowKaaf 3.5s ease-in-out infinite;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            animation: floatPulse 2.5s ease-in-out infinite;
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #040914;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #1E3A8A, #3B82F6);
+            border: 1px solid var(--saudi-gold);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #60A5FA;
+        }
+
+        .badge-pill {
+            background: linear-gradient(90deg, rgba(30, 58, 138, 0.9), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased pb-16 custom-scrollbar">
+
+    <!-- Fixed Canvas Background -->
+    <img src="https://i.ibb.co/PGhgmz8X/canvas1.png" alt="خلفية الهوية الرقمية" class="bg-canvas-fixed" onerror="this.style.display='none'">
+    <div class="bg-canvas-overlay"></div>
+
+    <!-- Floating Brand Logo (KAAF Marketing) -->
+    <div class="floating-logo-container hidden sm:block">
+        <a href="https://kaafmarketing.sa/" target="_blank" rel="noopener noreferrer" title="مجموعة كاف لتطوير الأعمال | KAAF Business Development">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-900/95 backdrop-blur-md p-1.5 rounded-2xl border-2 border-blue-400/80 shadow-2xl flex items-center justify-center transition-transform hover:scale-110 glow-blue">
+                <img src="https://i.ibb.co/PZxBrJrr/1783599594349.jpg" alt="شعار كاف العائم" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/070D1E/3B82F6?text=KAAF'">
+            </div>
+        </a>
+    </div>
+
+    <!-- WhatsApp Floating Action -->
+    <a href="https://wa.me/966537553910" target="_blank" rel="noopener noreferrer" class="whatsapp-float group" title="تواصل معنا عبر الواتساب">
+        <div class="flex items-center gap-2.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-500 text-white font-bold px-5 py-3.5 rounded-full shadow-2xl border border-amber-300 transition-all duration-300 hover:scale-105 glow-blue">
+            <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span class="text-xs sm:text-sm tracking-wide">تواصل عبر الواتساب</span>
+        </div>
+    </a>
+
+    <!-- Header Section -->
+    <header class="gradient-header text-white pt-10 pb-16 px-4 sm:px-8 relative overflow-hidden">
+        <div class="absolute -top-12 -right-12 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+        <div class="absolute -bottom-12 -left-12 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="inline-block mb-5 relative pulse-badge">
+                <a href="https://kaafmarketing.sa/" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform duration-500 hover:scale-110">
+                    <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto bg-slate-900/95 p-2 rounded-3xl border-2 border-amber-400/90 shadow-2xl glow-gold flex items-center justify-center">
+                        <img src="https://i.ibb.co/PZxBrJrr/1783599594349.jpg" alt="شعار مجموعة كاف لتطوير الأعمال" class="w-full h-full object-cover rounded-2xl" onerror="this.src='https://placehold.co/150x150/070D1E/FCD34D?text=KAAF'">
+                    </div>
+                </a>
+            </div>
+
+            <div class="block">
+                <div class="inline-flex items-center gap-2 badge-pill px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold mb-4 text-blue-300 shadow-xl border border-amber-400/50 pulse-badge">
+                    <span class="text-amber-400 animate-spin">📐</span>
+                    <span>دراسة السوق والتحليل التنافسي والخطة التسويقية الاستراتيجية</span>
+                </div>
+            </div>
+
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3 text-white drop-shadow-2xl gold-shimmer-text">
+                دراسة السوق والتحليل التنافسي والخطة التسويقية
+            </h1>
+            
+            <div class="inline-block bg-slate-900/95 backdrop-blur-xl px-8 py-3.5 rounded-2xl border border-amber-400/70 text-center shadow-2xl mt-2 mb-2 transition-transform hover:scale-105 duration-300">
+                <p class="text-xs sm:text-sm text-amber-200/90 font-medium">مقدمة من: <a href="https://kaafmarketing.sa/" target="_blank" class="text-blue-400 font-extrabold hover:underline">مجموعة كاف لتطوير الأعمال</a></p>
+                <p class="text-base sm:text-xl font-extrabold text-white mt-1">إلى: <span class="text-amber-300">شركة كفاءة العمران للاستشارات الهندسية</span></p>
+                <div class="flex flex-wrap items-center justify-center gap-4 mt-2 text-xs text-slate-300">
+                    <span class="bg-blue-950/80 px-3 py-1 rounded-full border border-blue-500/40">السوق المستهدف: المملكة العربية السعودية</span>
+                    <span class="bg-purple-950/80 px-3 py-1 rounded-full border border-purple-500/40">مدة الخطة الاستراتيجية: 90 يوماً</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-8 -mt-8 relative z-20 space-y-4">
+
+        <!-- 1. الملخص التنفيذي -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-blue-500 pr-4 mb-4">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-blue-400 text-3xl">📌</span>
+                    <span>1. الملخص التنفيذي</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                <p class="bg-slate-950/70 p-6 rounded-2xl border border-slate-800/90 text-slate-200 leading-relaxed shadow-inner">
+                    بناءً على دراسة النشاط التجاري لشركة كفاءة العمران للاستشارات الهندسية ومراجعة موقعها الإلكتروني وطبيعة الخدمات التي تقدمها، ترى مجموعة كاف لتطوير الأعمال أن الشركة تمتلك فرصاً واعدة لتعزيز حضورها التنافسي وتوسيع قاعدة عملائها من خلال بناء منظومة تسويقية رقمية متكاملة.
+                </p>
+                <p>
+                    تتمثل الفرصة الرئيسية في الانتقال من مجرد التعريف بالخدمات الهندسية إلى بناء قنوات تسويقية تستهدف العملاء وفق احتياجاتهم الفعلية، وتحويل اهتمامهم إلى استفسارات جادة وفرص تعاقد قابلة للمتابعة والقياس.
+                </p>
+
+                <p class="font-bold text-amber-300 mt-4">وتعتمد الاستراتيجية المقترحة على ثلاثة محاور رئيسية:</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <div class="card-inner p-4 rounded-2xl border-t-4 border-blue-500">
+                        <strong class="text-blue-300 block mb-1 text-base">تحسين الظهور الرقمي:</strong>
+                        تعزيز ظهور الشركة أمام العملاء الباحثين عن الخدمات الهندسية من خلال محركات البحث والمنصات الرقمية.
+                    </div>
+                    <div class="card-inner p-4 rounded-2xl border-t-4 border-amber-400">
+                        <strong class="text-amber-300 block mb-1 text-base">بناء الثقة والهوية المؤسسية:</strong>
+                        إبراز الخبرات والمشاريع السابقة والقدرات الفنية من خلال محتوى احترافي.
+                    </div>
+                    <div class="card-inner p-4 rounded-2xl border-t-4 border-purple-500">
+                        <strong class="text-purple-300 block mb-1 text-base">توليد فرص تعاقد:</strong>
+                        استهداف العملاء المحتملين وتحويل الزيارات والتفاعلات الرقمية إلى طلبات استشارة وعروض أسعار.
+                    </div>
+                </div>
+
+                <p class="mt-4">
+                    وتوصي مجموعة كاف بالبدء بنموذج يعتمد على التسويق الرقمي دون الحاجة إلى إنشاء فريق مبيعات مستقل في المرحلة الأولى، مع تخصيص مسؤول من داخل الشركة لمتابعة الاستفسارات الواردة والتواصل مع العملاء المحتملين.
+                </p>
+                <p>
+                    يسمح هذا النموذج باختبار قنوات اكتساب العملاء وقياس كفاءتها قبل اتخاذ قرار التوسع في الموارد البشرية والمبيعات.
+                </p>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 2. تحليل نشاط الشركة والفرص التجارية -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-amber-400 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-amber-400 font-mono text-3xl">02</span>
+                    <span>2. تحليل نشاط الشركة والفرص التجارية</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                تقدم شركة كفاءة العمران مجموعة من الخدمات الهندسية التي تتيح لها استهداف شرائح متنوعة من العملاء، وهو ما يمثل فرصة لتنويع مصادر الإيرادات وعدم الاعتماد على خدمة واحدة.
+            </p>
+
+            <h3 class="text-lg font-bold text-blue-300 mb-3">الخدمات والشرائح المستهدفة</h3>
+            <div class="overflow-x-auto rounded-2xl border border-slate-700/80 shadow-2xl mb-8">
+                <table class="w-full text-right text-xs sm:text-sm">
+                    <thead class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-amber-300 font-bold border-b border-slate-700">
+                        <tr>
+                            <th class="p-4 sm:p-5">الخدمة</th>
+                            <th class="p-4 sm:p-5">الشريحة المستهدفة</th>
+                            <th class="p-4 sm:p-5">الهدف التسويقي</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/90 text-slate-200 bg-slate-950/60">
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">التصميم الهندسي</td>
+                            <td class="p-4">ملاك الأراضي والمقبلون على البناء</td>
+                            <td class="p-4">استقطاب طلبات التصميم والمخططات</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">رخص البناء والتراخيص</td>
+                            <td class="p-4">الأفراد والمستثمرون</td>
+                            <td class="p-4">استقطاب طلبات الخدمات والتراخيص</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">الأعمال المساحية</td>
+                            <td class="p-4">ملاك الأراضي والمطورون</td>
+                            <td class="p-4">استقطاب طلبات الرفع والفرز المساحي</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">الإشراف الهندسي</td>
+                            <td class="p-4">ملاك المشاريع والمقاولون</td>
+                            <td class="p-4">استقطاب فرص عقود الإشراف</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">إدارة المشاريع</td>
+                            <td class="p-4">المطورون والشركات</td>
+                            <td class="p-4">استقطاب فرص التعاقد طويلة الأجل</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">الاستشارات الهندسية</td>
+                            <td class="p-4">الأفراد والشركات</td>
+                            <td class="p-4">استقطاب طلبات الاستشارات والتقارير الفنية</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-lg font-bold text-amber-300 mb-4">الشرائح السوقية المستهدفة</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6 text-xs sm:text-sm">
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-blue-500">
+                    <h4 class="font-bold text-blue-300 text-base mb-2">أولًا: الأفراد وملاك العقارات</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> المقبلون على بناء الفلل والمباني السكنية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> ملاك الأراضي الراغبون في استخراج رخص البناء.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> أصحاب العقارات الراغبون في الترميم والتعديل.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> ملاك المباني الذين يحتاجون إلى خدمات الامتثال وإتمام البناء.</li>
+                    </ul>
+                </div>
+
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-purple-500">
+                    <h4 class="font-bold text-purple-300 text-base mb-2">ثانيًا: المستثمرون والمطورون العقاريون</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> المطورون العقاريون.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> المستثمرون في المشاريع السكنية والتجارية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> ملاك الأراضي الاستثمارية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> شركات التطوير العقاري.</li>
+                    </ul>
+                </div>
+
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-amber-400">
+                    <h4 class="font-bold text-amber-300 text-base mb-2">ثالثًا: قطاع الأعمال</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> شركات المقاولات.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> المؤسسات العقارية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> الشركات التي تحتاج إلى خدمات هندسية ومساحية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> الجهات التي تحتاج إلى الإشراف وإدارة المشاريع.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-blue-950/80 p-5 rounded-2xl border border-blue-400/50">
+                <h3 class="font-bold text-amber-300 text-base mb-2">الفرصة التجارية</h3>
+                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    توصي مجموعة كاف بتقسيم الخدمات إلى مسارات تسويقية مستقلة، بحيث يتم تخصيص رسالة تسويقية وجمهور مستهدف وصفحة هبوط ومؤشرات أداء لكل خدمة رئيسية.
+                    يساعد هذا التوجه على تحديد الخدمات الأكثر طلباً، والتعرف على الشرائح الأكثر اهتماماً، وتوجيه الجهود التسويقية نحو الفرص ذات القيمة التجارية الأعلى.
+                </p>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 3. تحليل الوضع الرقمي الحالي للشركة -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-indigo-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-indigo-400 font-mono text-3xl">03</span>
+                    <span>3. تحليل الوضع الرقمي الحالي للشركة</span>
+                </h2>
+            </div>
+
+            <h3 class="text-xl font-extrabold text-blue-300 mb-4">أولًا: الموقع الإلكتروني</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
+                يمثل الموقع الإلكتروني الواجهة الرقمية الرئيسية للشركة، ومن خلال مراجعة محتواه وهيكله تظهر مجموعة من نقاط القوة وفرص التطوير.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-blue-400">
+                    <h4 class="text-lg font-bold text-blue-300 mb-3 flex items-center gap-2">
+                        <span>✨</span> نقاط القوة
+                    </h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+                        <li class="flex items-start gap-2"><span class="text-blue-400">•</span> وجود موقع إلكتروني يعرض نشاط الشركة وخدماتها.</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-400">•</span> تنوع الخدمات الهندسية المقدمة.</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-400">•</span> وجود قسم للمشاريع والأعمال السابقة.</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-400">•</span> تقديم نبذة عن الشركة وخبراتها.</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-400">•</span> وجود وسائل للتواصل مع العملاء.</li>
+                    </ul>
+                </div>
+
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-amber-400">
+                    <h4 class="text-lg font-bold text-amber-300 mb-3 flex items-center gap-2">
+                        <span>🚀</span> فرص التطوير
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-right text-xs">
+                            <thead class="bg-slate-900 text-amber-200 border-b border-slate-700">
+                                <tr>
+                                    <th class="p-2">العنصر</th>
+                                    <th class="p-2">الملاحظة</th>
+                                    <th class="p-2">الإجراء المقترح</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-300">
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">تجربة المستخدم</td>
+                                    <td class="p-2">الحاجة إلى تنظيم مسارات الوصول للخدمات</td>
+                                    <td class="p-2">إعادة تنظيم هيكل الموقع</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">صفحات الخدمات</td>
+                                    <td class="p-2">الحاجة إلى تفاصيل مستقلة لكل خدمة</td>
+                                    <td class="p-2">تطوير صفحات متخصصة</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">المشاريع</td>
+                                    <td class="p-2">عرض الأعمال دون تفاصيل كافية عن نطاق التنفيذ</td>
+                                    <td class="p-2">تحويل المشاريع إلى دراسات حالة</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">عوامل الثقة</td>
+                                    <td class="p-2">الحاجة إلى إبراز الخبرات والاعتمادات والفريق</td>
+                                    <td class="p-2">تطوير قسم الخبرات والمؤهلات</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">التواصل</td>
+                                    <td class="p-2">الحاجة إلى تعزيز طلبات الاستشارات وعروض الأسعار</td>
+                                    <td class="p-2">تطوير نماذج التواصل</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold text-blue-300">المحتوى</td>
+                                    <td class="p-2">وجود عبارات تعريفية عامة ومتكررة</td>
+                                    <td class="p-2">تطوير محتوى متخصص</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-inner p-6 rounded-2xl border-t-4 border-purple-500">
+                <h4 class="text-lg font-bold text-purple-300 mb-3">الملاحظات الفنية</h4>
+                <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+                    ظهرت أثناء مراجعة الصفحات الداخلية بعض المؤشرات التي تتطلب مراجعة فنية وتحريرية، ومنها عدم اتساق بعض المعلومات الظاهرة مع هوية الشركة، ووجود روابط وبيانات تستدعي التحقق من ارتباطها بالنطاق الصحيح.
+                </p>
+                <p class="text-xs sm:text-sm font-bold text-amber-300 mb-2">وتوصي مجموعة كاف بإجراء مراجعة شاملة تشمل:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs text-slate-200">
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• الروابط الداخلية والخارجية.</div>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• بيانات الشركة في صفحات الموقع.</div>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• العناوين والأوصاف التعريفية.</div>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• بنية الروابط والأرشفة والفهرسة.</div>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• سرعة التحميل وتجربة استخدام الجوال.</div>
+                    <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 motion-item">• إعدادات التتبع وقياس التحويلات.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 4. التحليل التنافسي ودراسة أبرز المنافسين -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-amber-400 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-amber-400 font-mono text-3xl">04</span>
+                    <span>4. التحليل التنافسي ودراسة أبرز المنافسين</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                تم اختيار ثلاثة نماذج منافسة ومرجعية في قطاع الاستشارات الهندسية، بناءً على تقاطع الخدمات والحضور الرقمي وطبيعة الجمهور المستهدف.
+                ويهدف التحليل إلى تحديد أساليب المنافسة والفرص التسويقية المتاحة لشركة كفاءة العمران، وليس تقديم ترتيب رسمي للشركات أو تقييم حصصها السوقية.
+            </p>
+
+            <div class="space-y-6">
+                <!-- المنافس الأول -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-blue-500">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-slate-800">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-blue-300">المنافس الأول: قبة العمران للاستشارات الهندسية (QOC)</h3>
+                        <a href="https://qoc.com.sa/" target="_blank" rel="noopener noreferrer" class="text-xs text-amber-300 hover:underline bg-slate-900 px-3 py-1.5 rounded-full border border-amber-400/40">https://qoc.com.sa/ ↗</a>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4 font-semibold">طبيعة النشاط: الاستشارات الهندسية والتصميم وإدارة المشاريع.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm mb-4">
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">تحليل الحضور الرقمي:</h4>
+                            <p class="text-slate-300 leading-relaxed">
+                                تعرض الشركة مجموعة من الخدمات والمشاريع الهندسية، مع تصنيفات للمباني السكنية والأبراج الإدارية والسكنية والمساجد والمشاريع الفندقية. كما تعتمد على عرض نماذج من المشاريع والملف التعريفي للشركة لإبراز خبراتها وقدراتها الفنية.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-blue-300 mb-2">نقاط القوة التنافسية:</h4>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• عرض نماذج المشاريع حسب نوع المبنى.</li>
+                                <li>• وجود محفظة مشاريع تدعم إبراز الخبرة الفنية.</li>
+                                <li>• تقديم الشركة باعتبارها جهة تقدم حلولاً هندسية متنوعة.</li>
+                                <li>• وجود حضور على منصات التواصل المهني والاجتماعي.</li>
+                                <li>• استخدام المشاريع كوسيلة للتعريف بالخدمات.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-xl border border-indigo-500/40 text-xs sm:text-sm">
+                        <h4 class="font-bold text-indigo-300 mb-2">الفرص المتاحة لكفاءة العمران:</h4>
+                        <p class="text-slate-300 mb-2">• تطوير معرض مشاريع أكثر تفصيلاً يوضح نطاق العمل والخدمات المقدمة. | • إنشاء صفحات متخصصة لكل خدمة هندسية. | • نشر محتوى توعوي يستهدف ملاك الأراضي والمقبلين على البناء. | • تطوير صفحات هبوط لاستقطاب طلبات الاستشارات وعروض الأسعار. | • إنتاج فيديوهات توضح مراحل التصميم والإشراف والتنفيذ.</p>
+                        <h4 class="font-bold text-amber-300 mt-3 mb-1">الاستراتيجية المقترحة للتنافس:</h4>
+                        <p class="text-slate-200 leading-relaxed">
+                            توصي كاف بتحويل المشاريع السابقة لكفاءة العمران إلى أدوات تسويقية متكاملة، بحيث يتم عرض كل مشروع من خلال تفاصيل التحديات والحلول الهندسية والخدمات المقدمة والنتائج المحققة. وبذلك يصبح معرض المشاريع وسيلة لإثبات الخبرة وإقناع العميل، وليس مجرد مساحة لعرض الصور.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- المنافس الثاني -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-purple-500">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-slate-800">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-purple-300">المنافس الثاني: أكنان العمران للاستشارات الهندسية</h3>
+                        <a href="https://aknan-alomran.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-amber-300 hover:underline bg-slate-900 px-3 py-1.5 rounded-full border border-amber-400/40">https://aknan-alomran.com/ ↗</a>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4 font-semibold">طبيعة النشاط: التصميم المعماري والداخلي والحلول الهندسية.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm mb-4">
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">تحليل الحضور الرقمي:</h4>
+                            <p class="text-slate-300 leading-relaxed">
+                                تعرض الشركة خدمات التصميم المعماري والداخلي وتصميم الفراغات الخارجية والتخطيط الحضري، كما تعرض نماذج من المشاريع السكنية والتجارية وأعمال التصميم والإشراف.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-purple-300 mb-2">نقاط القوة التنافسية:</h4>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• التركيز على الجانب البصري والإبداعي للتصميم.</li>
+                                <li>• عرض المشاريع والتصنيفات المختلفة.</li>
+                                <li>• إبراز العملاء والشركاء وآراء العملاء.</li>
+                                <li>• تقديم مجموعة من الخدمات التصميمية والهندسية.</li>
+                                <li>• الاستفادة من المحتوى البصري في التعريف بالقدرات الفنية.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-xl border border-purple-500/40 text-xs sm:text-sm">
+                        <h4 class="font-bold text-purple-300 mb-2">الفرص المتاحة لكفاءة العمران:</h4>
+                        <p class="text-slate-300 mb-2">• تنويع المحتوى بين التصميم الجمالي والخدمات الهندسية والفنية. | • إبراز خدمات الإشراف والتراخيص والأعمال المساحية. | • إنتاج محتوى يوضح مراحل المشروع قبل التصميم وبعده. | • استخدام الفيديوهات والتصاميم ثلاثية الأبعاد. | • استهداف الكلمات المرتبطة بالتصميم والإشراف والإنشاء.</p>
+                        <h4 class="font-bold text-amber-300 mt-3 mb-1">الاستراتيجية المقترحة للتنافس:</h4>
+                        <p class="text-slate-200 leading-relaxed">
+                            العمل على بناء صورة ذهنية لكفاءة العمران باعتبارها جهة هندسية قادرة على مرافقة العميل في أكثر من مرحلة، بداية من التخطيط والتصميم وحتى التراخيص والإشراف وإدارة المشروع. ويساعد هذا التوجه على توسيع نطاق العملاء المستهدفين وعدم حصر النشاط في خدمات التصميم فقط.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- المنافس الثالث -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-amber-400">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-slate-800">
+                        <h3 class="text-lg sm:text-xl font-extrabold text-amber-300">المنافس الثالث: اتحاد المنفذين للاستشارات الهندسية</h3>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full border border-slate-700">المقر: الرياض</span>
+                            <a href="https://atehad.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-amber-300 hover:underline bg-slate-900 px-3 py-1.5 rounded-full border border-amber-400/40">https://atehad.com/ ↗</a>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4 font-semibold">طبيعة النشاط: الاستشارات الهندسية والتراخيص والأعمال المساحية والإشراف وإدارة المشاريع.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm mb-4">
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">تحليل الحضور الرقمي:</h4>
+                            <p class="text-slate-300 leading-relaxed">
+                                يقدم الموقع مجموعة متنوعة من الخدمات الهندسية من خلال صفحات مستقلة، ويعتمد على المحتوى التعريفي والتفصيلي للخدمات، مع عرض نماذج الأعمال والمقالات والأسئلة الشائعة ووسائل التواصل المباشر.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">نقاط القوة التنافسية:</h4>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• تقسيم الخدمات إلى صفحات ومسارات واضحة.</li>
+                                <li>• تقديم محتوى تفصيلي حول الخدمات.</li>
+                                <li>• استهداف الكلمات المرتبطة بالمدن والخدمات الهندسية.</li>
+                                <li>• توفير نماذج أعمال ومشاريع.</li>
+                                <li>• استخدام الأسئلة الشائعة للإجابة عن استفسارات العملاء.</li>
+                                <li>• تسهيل التواصل من خلال واتساب والاتصال المباشر.</li>
+                                <li>• إبراز تقييمات العملاء.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-xl border border-amber-400/40 text-xs sm:text-sm">
+                        <h4 class="font-bold text-amber-300 mb-2">الفرص المتاحة لكفاءة العمران:</h4>
+                        <p class="text-slate-300 mb-2">• تطوير محتوى أكثر تخصصاً وعمقاً في الخدمات الهندسية. | • بناء دراسات حالة موثقة للمشاريع السابقة. | • تطوير صفحات هبوط مخصصة لكل خدمة. | • استهداف الكلمات ذات النية التجارية المرتبطة بطلب الخدمات. | • تعزيز الظهور المحلي في محركات البحث. | • تقديم محتوى مرئي يشرح مراحل الحصول على الخدمة ومتطلباتها.</p>
+                        <h4 class="font-bold text-amber-300 mt-3 mb-1">الاستراتيجية المقترحة للتنافس:</h4>
+                        <p class="text-slate-200 leading-relaxed">
+                            الجمع بين المحتوى المتخصص والإثبات العملي للخبرة، بحيث لا يكتفي الموقع بشرح الخدمة، بل يقدم للعميل نماذج عملية تثبت قدرة الشركة على تقديمها من خلال المشاريع السابقة والتفاصيل الفنية وآراء العملاء.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 5. المقارنة التنافسية والفرص المتاحة -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-blue-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-3xl">05</span>
+                    <span>5. المقارنة التنافسية والفرص المتاحة</span>
+                </h2>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-700/80 shadow-2xl mb-6">
+                <table class="w-full text-right text-xs sm:text-sm">
+                    <thead class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-amber-300 font-bold border-b border-slate-700">
+                        <tr>
+                            <th class="p-4">عنصر المقارنة</th>
+                            <th class="p-4">قبة العمران</th>
+                            <th class="p-4">أكنان العمران</th>
+                            <th class="p-4">اتحاد المنفذين</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/90 text-slate-200 bg-slate-950/60">
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">عرض المشاريع</td>
+                            <td class="p-4">تصنيفات ومعرض مشاريع</td>
+                            <td class="p-4">مؤشرات وتصنيفات مشاريع</td>
+                            <td class="p-4">نماذج أعمال</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">المحتوى التخصصي</td>
+                            <td class="p-4">محتوى تعريفي ومشاريع</td>
+                            <td class="p-4">تركيز على التصميم</td>
+                            <td class="p-4">صفحات ومقالات متخصصة</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">تقسيم الخدمات</td>
+                            <td class="p-4">خدمات ومشاريع</td>
+                            <td class="p-4">خدمات تصميمية</td>
+                            <td class="p-4">صفحات تفصيلية</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">بناء الثقة</td>
+                            <td class="p-4">ملف تعريفي ومشاريع</td>
+                            <td class="p-4">عملاء وشركاء وآراء</td>
+                            <td class="p-4">تقييمات وأسئلة شائعة</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 font-bold text-blue-400">تحويل الزوار</td>
+                            <td class="p-4">نموذج تواصل</td>
+                            <td class="p-4">وسائل تواصل</td>
+                            <td class="p-4">واتساب واتصال مباشر</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-inner p-6 rounded-2xl border-t-4 border-amber-400">
+                <h3 class="text-lg font-bold text-amber-300 mb-3">الاستنتاج التنافسي</h3>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                    توضح المقارنة أن المنافسة في قطاع الاستشارات الهندسية لا تعتمد على جودة الخدمة وحدها، بل تشمل أيضاً قدرة المكتب على الظهور أمام العميل في الوقت الذي يبحث فيه عن الخدمة، وإقناعه بالخبرة، وتسهيل انتقاله من مرحلة البحث إلى طلب عرض السعر.
+                </p>
+                <p class="text-xs sm:text-sm font-bold text-white mb-2">وتتمثل الفرصة المتاحة لكفاءة العمران في بناء نموذج رقمي يجمع بين:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs text-slate-200">
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 motion-item text-center">محفظة مشاريع احترافية.</div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 motion-item text-center">صفحات متخصصة لتحسين محركات البحث.</div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 motion-item text-center">محتوى مرئي وتعليمي.</div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 motion-item text-center">حملات إعلانية مرتبطة بالخدمات.</div>
+                    <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800 motion-item text-center">مسار واضح لتحويل الاستفسارات إلى فرص تعاقد.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 6. استراتيجية التفوق التنافسي -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-purple-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-purple-400 font-mono text-3xl">06</span>
+                    <span>6. استراتيجية التفوق التنافسي</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                تعتمد الاستراتيجية المقترحة على تطوير العناصر التي تؤثر بصورة مباشرة في قرار العميل، وليس مجرد زيادة عدد الزيارات أو المنشورات.
+            </p>
+
+            <div class="space-y-6">
+
+                <!-- SEO -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-blue-500">
+                    <h3 class="text-xl font-extrabold text-blue-300 mb-2">أولًا: تحسين محركات البحث SEO</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4">
+                        <strong class="text-amber-300">الهدف:</strong> تعزيز ظهور كفاءة العمران في نتائج البحث المرتبطة بالخدمات الهندسية، والوصول إلى العملاء الذين يبحثون بالفعل عن حلول وخدمات تقدمها الشركة.
+                    </p>
+
+                    <h4 class="text-base font-bold text-blue-400 mb-3">الكلمات المفتاحية المستهدفة</h4>
+                    <div class="overflow-x-auto rounded-xl border border-slate-700/80 shadow-lg mb-6">
+                        <table class="w-full text-right text-xs sm:text-sm">
+                            <thead class="bg-slate-900 text-amber-300 font-bold border-b border-slate-700">
+                                <tr>
+                                    <th class="p-3">المجموعة</th>
+                                    <th class="p-3">أمثلة للكلمات المستهدفة</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-200 bg-slate-950/80">
+                                <tr>
+                                    <td class="p-3 font-bold text-blue-300">الاستشارات الهندسية</td>
+                                    <td class="p-3">مكتب استشارات هندسية بالرياض، مكتب هندسي معتمد بالرياض</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-blue-300">التصميم الهندسي</td>
+                                    <td class="p-3">تصميم مخططات هندسية، مكتب تصميم معماري، تصميم فلل</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-blue-300">التراخيص</td>
+                                    <td class="p-3">استخراج رخصة بناء، إصدار شهادة إتمام بناء</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-blue-300">الخدمات الفنية</td>
+                                    <td class="p-3">إشراف هندسي، رفع مساحي للأراضي، إدارة المشاريع الهندسية</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm mb-4">
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">خطة التنفيذ:</h4>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• إنشاء صفحة مستقلة لكل خدمة رئيسية.</li>
+                                <li>• إنشاء صفحات مخصصة للمناطق التي تغطيها الشركة فعلياً.</li>
+                                <li>• تحسين العناوين والأوصاف التعريفية وبنية الروابط.</li>
+                                <li>• تطوير مقالات متخصصة تجيب عن أسئلة العملاء.</li>
+                                <li>• إضافة الأسئلة الشائعة إلى صفحات الخدمات.</li>
+                                <li>• تحسين الربط الداخلي بين المقالات والخدمات.</li>
+                                <li>• تحسين سرعة الموقع وتجربة الجوال.</li>
+                                <li>• تحسين الظهور المحلي عبر Google Business Profile.</li>
+                                <li>• تطوير صفحات المشاريع وربطها بالخدمات ذات الصلة.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">الموضوعات المقترحة للمحتوى:</h4>
+                            <ul class="space-y-1.5 text-slate-300">
+                                <li>• ما خطوات استخراج رخصة بناء في السعودية؟</li>
+                                <li>• ما أهمية المكتب الهندسي قبل البدء في البناء؟</li>
+                                <li>• متى تحتاج إلى إشراف هندسي على مشروعك؟</li>
+                                <li>• ما الفرق بين التصميم المعماري والتصميم الإنشائي؟</li>
+                                <li>• متى تحتاج إلى رفع مساحي للأرض؟</li>
+                                <li>• ما أهمية شهادة امتثال المباني؟</li>
+                                <li>• كيف تختار المكتب الهندسي المناسب لمشروعك؟</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-950/80 p-3.5 rounded-xl border border-blue-400/40 text-xs sm:text-sm text-blue-200">
+                        <strong>النتيجة المستهدفة:</strong> بناء مصدر مستدام للزيارات العضوية والاستفسارات المؤهلة، وتقليل الاعتماد التدريجي على الإعلانات المدفوعة في الكلمات التي تستطيع الشركة المنافسة عليها عضوياً.
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-indigo-500">
+                    <h3 class="text-xl font-extrabold text-indigo-300 mb-2">ثانياً: إدارة وتطوير حسابات التواصل الاجتماعي</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4">
+                        <strong class="text-amber-300">الهدف:</strong> تحويل حسابات الشركة من منصات تعريفية إلى قنوات لبناء الثقة وإظهار الخبرة وتحفيز العملاء على طلب الخدمات.
+                    </p>
+
+                    <div class="mb-4 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-indigo-300 text-sm mb-2">المنصات المقترحة:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 text-xs">
+                            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-700"><strong>Instagram:</strong> لعرض المشاريع والتصميمات الهندسية.</div>
+                            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-700"><strong>Snapchat:</strong> للوصول إلى الأفراد والمقبلين على البناء.</div>
+                            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-700"><strong>TikTok:</strong> للمحتوى التوعوي والفيديوهات القصيرة.</div>
+                            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-700"><strong>LinkedIn:</strong> للمطورين العقاريين والشركات والجهات المهنية.</div>
+                            <div class="bg-slate-900 p-2.5 rounded-lg border border-slate-700"><strong>X:</strong> للمحتوى التعريفي والتوعوي وبناء الحضور المهني.</div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-base font-bold text-amber-300 mb-3">التوزيع الشهري المقترح للمحتوى</h4>
+                    <div class="overflow-x-auto rounded-xl border border-slate-700/80 shadow-lg mb-6">
+                        <table class="w-full text-right text-xs sm:text-sm">
+                            <thead class="bg-slate-900 text-indigo-300 font-bold border-b border-slate-700">
+                                <tr>
+                                    <th class="p-3">نوع المحتوى</th>
+                                    <th class="p-3 text-center">العدد الشهري</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-200 bg-slate-950/80">
+                                <tr><td class="p-3">منشورات تعليمية وتوعوية</td><td class="p-3 text-center font-bold text-amber-300">5</td></tr>
+                                <tr><td class="p-3">عرض مشاريع الشركة</td><td class="p-3 text-center font-bold text-amber-300">4</td></tr>
+                                <tr><td class="p-3">محتوى تعريفي بالخدمات</td><td class="p-3 text-center font-bold text-amber-300">4</td></tr>
+                                <tr><td class="p-3">تصميمات هندسية وإبداعية</td><td class="p-3 text-center font-bold text-amber-300">3</td></tr>
+                                <tr><td class="p-3">محتوى بناء الثقة والخبرات</td><td class="p-3 text-center font-bold text-amber-300">2</td></tr>
+                                <tr><td class="p-3">فيديوهات قصيرة</td><td class="p-3 text-center font-bold text-amber-300">2</td></tr>
+                                <tr class="bg-indigo-950/60 font-black"><td class="p-3 text-amber-300">الإجمالي</td><td class="p-3 text-center text-amber-300">20 قطعة محتوى</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm">
+                        <h4 class="font-bold text-amber-300 mb-2">نماذج المحتوى المقترح:</h4>
+                        <ul class="space-y-1.5 text-slate-300">
+                            <li><strong class="text-blue-300">• من المخطط إلى الواقع:</strong> عرض مراحل تطور المشروع من الفكرة والتصميم وحتى التنفيذ.</li>
+                            <li><strong class="text-blue-300">• معلومة هندسية في دقيقة:</strong> فيديوهات قصيرة يقدمها مهندس متخصص لشرح الأخطاء الشائعة وأهمية الإشراف.</li>
+                            <li><strong class="text-blue-300">• قبل أن تبدأ البناء:</strong> محتوى توعوي يوضح المتطلبات والخطوات التي يحتاجها مالك الأرض.</li>
+                            <li><strong class="text-blue-300">• مشاريعنا على أرض الواقع:</strong> عرض أعمال الشركة مع توضيح الخدمة ونطاق المسؤولية الهندسية.</li>
+                            <li><strong class="text-blue-300">• اعرف خدمتك:</strong> شرح مبسط لخدمات التراخيص والرفع المساحي والتصميم والاستشارات.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Paid Campaigns -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-amber-400">
+                    <h3 class="text-xl font-extrabold text-amber-300 mb-2">ثالثاً: الحملات الإعلانية الممولة</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mb-4">
+                        <strong class="text-amber-300">الهدف:</strong> الوصول إلى العملاء ذوي الاحتياج الفعلي للخدمات الهندسية، وتحويل عمليات البحث والاهتمام إلى طلبات استشارة وعروض أسعار.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-amber-300 mb-2">الحملة الأولى: Google Search Ads</h4>
+                            <p class="text-slate-300 text-xs mb-2">تستهدف العملاء الذين يبحثون بالفعل عن الخدمات الهندسية.</p>
+                            <strong class="text-blue-300 block text-xs mb-1">المجموعات الإعلانية المقترحة:</strong>
+                            <p class="text-slate-300 text-xs mb-3">• مكتب استشارات هندسية. | • تصميم مخططات هندسية. | • رخص البناء والتراخيص. | • الإشراف الهندسي. | • الرفع المساحي. | • إدارة المشاريع الهندسية.</p>
+                            <strong class="text-blue-300 block text-xs mb-1">آلية التنفيذ:</strong>
+                            <p class="text-slate-300 text-xs">• استهداف المدن التي تغطيها الشركة. | • استخدام الكلمات المفتاحية ذات النية الشرائية. | • استبعاد عمليات البحث غير المرتبطة بالخدمات. | • توجيه كل إعلان إلى صفحة الخدمة المناسبة. | • قياس المكالمات وطلبات عروض الأسعار.</p>
+                        </div>
+
+                        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 space-y-3">
+                            <div>
+                                <h4 class="font-bold text-purple-300 mb-1">الحملة الثانية: Meta Ads</h4>
+                                <p class="text-slate-300 text-xs">تستهدف الأفراد المهتمين بالبناء والتصميم وملاك العقارات.</p>
+                                <p class="text-slate-400 text-xs">• فيديوهات عرض المشاريع. | • إعلانات تصميم الفلل. | • إعلانات خدمات التراخيص. | • إعلانات طلب الاستشارة الهندسية. | • إعادة استهداف زوار الموقع والمتفاعلين.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-indigo-300 mb-1">الحملة الثالثة: Snapchat Ads</h4>
+                                <p class="text-slate-300 text-xs">تستهدف شريحة الأفراد والمقبلين على البناء من خلال محتوى بصري سريع.</p>
+                                <p class="text-slate-400 text-xs">• أخطاء يجب تجنبها قبل البناء. | • أهمية اختيار المكتب الهندسي. | • مراحل استخراج الرخص. | • نماذج من المشاريع والتصميمات.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-300 mb-1">الحملة الرابعة: LinkedIn Ads</h4>
+                                <p class="text-slate-300 text-xs">تستهدف المطورين العقاريين وشركات المقاولات والجهات التي تحتاج إلى خدمات هندسية مستمرة. ويتم تفعيل هذا المسار بعد تجهيز محتوى احترافي ودراسات حالة توضح خبرة الشركة وقدراتها الفنية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 7. منظومة توليد العملاء دون الحاجة إلى فريق مبيعات مستقل -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-blue-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-3xl">07</span>
+                    <span>7. منظومة توليد العملاء دون الحاجة إلى فريق مبيعات مستقل</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                توصي مجموعة كاف ببناء منظومة رقمية لاستقبال العملاء المحتملين وتأهيلهم، دون الحاجة إلى إنشاء فريق مبيعات كامل في المرحلة الأولى.
+            </p>
+
+            <h3 class="text-lg font-bold text-amber-300 mb-4">رحلة العميل</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-center text-xs mb-8">
+                <div class="card-inner p-3.5 rounded-xl border-t-2 border-blue-400">
+                    <strong class="text-blue-300 block mb-1 text-sm">المرحلة الأولى</strong>
+                    <span class="text-slate-200 font-bold">الوصول إلى العميل</span>
+                    <p class="text-slate-400 text-[11px] mt-1">عبر Google وInstagram وSnapchat وSEO.</p>
+                </div>
+                <div class="card-inner p-3.5 rounded-xl border-t-2 border-indigo-400">
+                    <strong class="text-indigo-300 block mb-1 text-sm">المرحلة الثانية</strong>
+                    <span class="text-slate-200 font-bold">استقبال الطلب</span>
+                    <p class="text-slate-400 text-[11px] mt-1">عبر صفحات الخدمات ونماذج التواصل وواتساب.</p>
+                </div>
+                <div class="card-inner p-3.5 rounded-xl border-t-2 border-purple-400">
+                    <strong class="text-purple-300 block mb-1 text-sm">المرحلة الثالثة</strong>
+                    <span class="text-slate-200 font-bold">تأهيل العميل</span>
+                    <p class="text-slate-400 text-[11px] mt-1">نوع الخدمة، المدينة، طبيعة المشروع، التوقيت، الميزانية.</p>
+                </div>
+                <div class="card-inner p-3.5 rounded-xl border-t-2 border-amber-400">
+                    <strong class="text-amber-300 block mb-1 text-sm">المرحلة الرابعة</strong>
+                    <span class="text-slate-200 font-bold">التحويل للمسؤول</span>
+                    <p class="text-slate-400 text-[11px] mt-1">تحويل الاستفسار المؤهل للمختص للتواصل وتقديم العرض.</p>
+                </div>
+                <div class="card-inner p-3.5 rounded-xl border-t-2 border-pink-400">
+                    <strong class="text-pink-300 block mb-1 text-sm">المرحلة الخامسة</strong>
+                    <span class="text-slate-200 font-bold">متابعة الفرصة</span>
+                    <p class="text-slate-400 text-[11px] mt-1">تسجيل حالة العميل وقيمة العرض ونتيجة المتابعة والتعاقد.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- تصنيف العملاء المحتملين -->
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-amber-400">
+                    <h3 class="text-base font-bold text-amber-300 mb-3">تصنيف العملاء المحتملين</h3>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200">
+                        <li class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <strong class="text-blue-300 block mb-0.5">• عميل مؤهل:</strong> لديه احتياج واضح وخدمة محددة ويرغب في الحصول على عرض سعر.
+                        </li>
+                        <li class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <strong class="text-purple-300 block mb-0.5">• عميل مهتم:</strong> لديه احتياج لكنه لا يزال في مرحلة التخطيط أو المقارنة.
+                        </li>
+                        <li class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                            <strong class="text-pink-300 block mb-0.5">• عميل غير مؤهل:</strong> لا يتوافق احتياجه مع خدمات الشركة أو نطاق عملها.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- توزيع المسؤوليات -->
+                <div class="card-inner p-5 rounded-2xl border-t-4 border-blue-500">
+                    <h3 class="text-base font-bold text-blue-300 mb-3">توزيع المسؤوليات</h3>
+                    
+                    <div class="mb-3">
+                        <strong class="text-amber-300 text-xs block mb-1">مسؤولية مجموعة كاف:</strong>
+                        <p class="text-xs text-slate-300 leading-relaxed">• إدارة المنظومة التسويقية. | • استقطاب العملاء المحتملين. | • تنظيم بيانات الاستفسارات. | • تحليل جودة العملاء. | • قياس أداء القنوات التسويقية. | • تقديم تقارير الأداء والتوصيات.</p>
+                    </div>
+
+                    <div>
+                        <strong class="text-blue-300 text-xs block mb-1">مسؤولية شركة كفاءة العمران:</strong>
+                        <p class="text-xs text-slate-300 leading-relaxed">• استقبال الاستفسارات. | • تقديم المعلومات الفنية. | • تجهيز عروض الأسعار. | • تنفيذ المعاينات عند الحاجة. | • متابعة العملاء حتى إتمام التعاقد.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-amber-300 font-bold text-center mt-6 bg-slate-900/80 p-3 rounded-xl border border-amber-400/40">
+                يساعد هذا النموذج على اختبار جدوى القنوات التسويقية قبل اتخاذ قرار التوسع في فريق المبيعات.
+            </p>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 8. مؤشرات قياس الأداء KPIs -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-amber-400 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-amber-400 font-mono text-3xl">08</span>
+                    <span>8. مؤشرات قياس الأداء KPIs</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                تعتمد الخطة على مؤشرات أداء واضحة تتيح للإدارة متابعة النتائج الفعلية وتقييم كفاءة الأنشطة التسويقية.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6 text-xs sm:text-sm">
+                <!-- SEO KPIs -->
+                <div class="card-inner p-4 rounded-2xl border-t-4 border-blue-500">
+                    <h3 class="font-bold text-blue-300 text-base mb-3">مؤشرات SEO</h3>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li>• <strong>الزيارات العضوية:</strong> عدد زوار جوجل غير المدفوعين</li>
+                        <li>• <strong>ترتيب الكلمات المفتاحية:</strong> متوسط ترتيب الكلمات المستهدفة</li>
+                        <li>• <strong>الظهور في نتائج البحث:</strong> Impressions</li>
+                        <li>• <strong>معدل النقر:</strong> CTR</li>
+                        <li>• <strong>التحويلات العضوية:</strong> الاستفسارات القادمة من SEO</li>
+                        <li>• <strong>الصفحات المؤرشفة:</strong> عدد الصفحات المؤهلة للظهور</li>
+                    </ul>
+                </div>
+
+                <!-- Social KPIs -->
+                <div class="card-inner p-4 rounded-2xl border-t-4 border-indigo-400">
+                    <h3 class="font-bold text-indigo-300 text-base mb-3">مؤشرات السوشيال ميديا</h3>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li>• <strong>معدل الوصول:</strong> Reach</li>
+                        <li>• <strong>التفاعل:</strong> Engagement Rate</li>
+                        <li>• <strong>مشاهدات الفيديو:</strong> Video Views</li>
+                        <li>• <strong>زيارات الحساب:</strong> Profile Visits</li>
+                        <li>• <strong>نقرات التواصل:</strong> WhatsApp / Website Clicks</li>
+                        <li>• <strong>الاستفسارات:</strong> Leads Generated</li>
+                    </ul>
+                </div>
+
+                <!-- Ads KPIs -->
+                <div class="card-inner p-4 rounded-2xl border-t-4 border-purple-400">
+                    <h3 class="font-bold text-purple-300 text-base mb-3">مؤشرات الحملات الإعلانية</h3>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li>• <strong>إجمالي الإنفاق:</strong> Ad Spend</li>
+                        <li>• <strong>عدد العملاء المحتملين:</strong> Total Leads</li>
+                        <li>• <strong>تكلفة العميل المحتمل:</strong> CPL</li>
+                        <li>• <strong>نسبة العملاء المؤهلين:</strong> Qualified Lead Rate</li>
+                        <li>• <strong>تكلفة العميل المؤهل:</strong> Cost per Qualified Lead</li>
+                        <li>• <strong>معدل التحويل:</strong> Conversion Rate</li>
+                        <li>• <strong>تكلفة اكتساب العميل:</strong> CAC</li>
+                        <li>• <strong>العائد على الإنفاق الإعلاني:</strong> ROAS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-inner p-5 rounded-2xl border-t-4 border-amber-400">
+                <h3 class="font-bold text-amber-300 text-base mb-2">مؤشرات الأداء التجاري</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs text-slate-200">
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• عدد طلبات عروض الأسعار.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• عدد الاجتماعات والاستشارات الناتجة عن التسويق.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• عدد العروض المقدمة.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• عدد التعاقدات الجديدة.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• متوسط قيمة التعاقد.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">• معدل التحويل من استفسار إلى تعاقد.</div>
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800 col-span-1 sm:col-span-2">• الإيرادات الناتجة عن العملاء المكتسبين.</div>
+                </div>
+                <p class="text-xs text-slate-400 mt-3">ويتم تقييم النتائج بصورة دورية، مع مراعاة أن مؤشرات الظهور والزيارات تختلف عن مؤشرات التحويل والإيرادات.</p>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 9. خطة التنفيذ الزمنية – 90 يوماً -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-blue-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-3xl">09</span>
+                    <span>9. خطة التنفيذ الزمنية – 90 يوماً</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+                <!-- الشهر الأول -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-blue-500">
+                    <span class="bg-blue-950 text-blue-300 font-black px-3 py-1 rounded-full text-xs border border-blue-400/40 inline-block mb-3">الشهر الأول</span>
+                    <h3 class="font-extrabold text-blue-300 text-base mb-3">التأسيس والتجهيز</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> مراجعة الموقع وإصلاح المشكلات الفنية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> إعداد استراتيجية الكلمات المفتاحية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> تحسين صفحات الخدمات الرئيسية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> إعداد أدوات التتبع والتحليل.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> تجهيز خطة المحتوى.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> إطلاق الحملات الإعلانية الأولية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-blue-400">•</span> إعداد نظام استقبال وتأهيل العملاء.</li>
+                    </ul>
+                </div>
+
+                <!-- الشهر الثاني -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-purple-500">
+                    <span class="bg-purple-950 text-purple-300 font-black px-3 py-1 rounded-full text-xs border border-purple-400/40 inline-block mb-3">الشهر الثاني</span>
+                    <h3 class="font-extrabold text-purple-300 text-base mb-3">التشغيل والتحسين</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> تنفيذ خطة المحتوى.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> متابعة أداء الحملات.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> تحليل مصادر العملاء المحتملين.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> تحسين الإعلانات والكلمات المفتاحية.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> تطوير صفحات الهبوط.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> مراجعة جودة العملاء مع فريق الشركة.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-purple-400">•</span> إعداد تقرير الأداء الشهري.</li>
+                    </ul>
+                </div>
+
+                <!-- الشهر الثالث -->
+                <div class="card-inner p-6 rounded-2xl border-t-4 border-amber-400">
+                    <span class="bg-amber-950 text-amber-300 font-black px-3 py-1 rounded-full text-xs border border-amber-400/40 inline-block mb-3">الشهر الثالث</span>
+                    <h3 class="font-extrabold text-amber-300 text-base mb-3">التوسع ورفع الكفاءة</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تطوير القنوات التي أثبتت كفاءتها.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> توسيع الكلمات المفتاحية المستهدفة.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تطوير المحتوى بناءً على اهتمامات العملاء.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تحسين معدلات تحويل الزوار إلى استفسارات.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تحليل تكلفة اكتساب العميل.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تقديم تقرير شامل عن نتائج أول 90 يوماً.</li>
+                        <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span> تحديد فرص التوسع في الخدمات والأسواق المستهدفة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 10. آلية تقليل المخاطر المالية والتشغيلية -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-amber-400 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-amber-400 font-mono text-3xl">10</span>
+                    <span>10. آلية تقليل المخاطر المالية والتشغيلية</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                    تدرك مجموعة كاف أهمية إدارة المخاطر المرتبطة بالاستثمار التسويقي، ولذلك تعتمد الاستراتيجية على آلية تشغيل تقوم على الشفافية والمراجعة الدورية.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>تقسيم العمل إلى مراحل تنفيذية واضحة.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>اختبار القنوات التسويقية قبل التوسع.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>إعداد تقارير أداء دورية.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>قياس جودة العملاء وليس عدد الاستفسارات فقط.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>مراجعة الحملات وتعديلها وفق النتائج.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>متابعة العملاء المحتملين مع إدارة الشركة.</span></div>
+                    <div class="card-inner p-3.5 rounded-xl border border-slate-800 col-span-1 sm:col-span-2 flex items-center gap-2"><span class="text-amber-400 font-bold">•</span><span>ربط التوسع التسويقي بقدرة الشركة على استقبال وتنفيذ المشاريع.</span></div>
+                </div>
+
+                <div class="bg-amber-950/80 p-4 rounded-xl border border-amber-400/50 text-amber-200 text-xs sm:text-sm font-bold text-center mt-3">
+                    مبدأ العمل: لا يتم التوسع في الإنفاق التسويقي لمجرد زيادة الظهور، وإنما بناءً على مؤشرات أداء تساعد الإدارة على اتخاذ قرارات استثمارية مدروسة.
+                </div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 11. النتائج المستهدفة من التعاون -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-blue-500 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-blue-400 font-mono text-3xl">11</span>
+                    <span>11. النتائج المستهدفة من التعاون</span>
+                </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mb-6">
+                تسعى مجموعة كاف من خلال تنفيذ هذه الاستراتيجية إلى تحقيق مجموعة من الأهداف:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-200">
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>تطوير الصورة الرقمية والاحترافية للشركة.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>تعزيز ظهور كفاءة العمران في محركات البحث.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>الوصول إلى شرائح جديدة من العملاء المحتملين.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>بناء قنوات متعددة لاستقطاب العملاء.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>تحسين جودة الاستفسارات الواردة للشركة.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>إنشاء قاعدة بيانات منظمة للعملاء المحتملين.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>قياس تكلفة الحصول على العميل ومصدره.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>تقليل الاعتماد على العلاقات الشخصية والمصادر التقليدية وحدها.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>بناء أصول رقمية تساعد الشركة على النمو على المدى الطويل.</span></div>
+                <div class="card-inner p-3.5 rounded-xl border border-slate-800 motion-item col-span-1 sm:col-span-2 lg:col-span-3 flex items-start gap-2"><span class="text-blue-400 font-bold">•</span><span>توفير بيانات عملية تساعد الإدارة في اتخاذ قرارات التوسع التجاري.</span></div>
+            </div>
+        </section>
+
+        <!-- Colorful Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- 12. الخاتمة والتوصية النهائية -->
+        <section class="card-dark rounded-3xl p-6 sm:p-8 shadow-2xl reveal">
+            <div class="border-r-4 border-amber-400 pr-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+                    <span class="text-amber-400 font-mono text-3xl">12</span>
+                    <span>12. الخاتمة والتوصية النهائية</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800 text-slate-200">
+                    ترى مجموعة كاف لتطوير الأعمال أن شركة كفاءة العمران تمتلك مقومات تؤهلها لتعزيز حضورها التنافسي في قطاع الاستشارات الهندسية، إلا أن الاستفادة من هذه المقومات تتطلب الانتقال إلى نموذج تسويقي أكثر تنظيماً يعتمد على استهداف العملاء وفق احتياجاتهم، وإظهار الخبرة الفنية، وتسهيل الوصول إلى الخدمات.
+                </p>
+                <p>
+                    وتوصي كاف بالبدء بمرحلة تشغيلية مدتها 90 يوماً تعتمد على التسويق الرقمي المتكامل، دون تحمل تكاليف إنشاء فريق مبيعات مستقل في المرحلة الأولى.
+                </p>
+                <p>
+                    وخلال هذه الفترة يتم قياس النتائج الفعلية وتحديد القنوات الأكثر كفاءة في استقطاب العملاء المؤهلين، بما يسمح للإدارة بتقييم جدوى الاستثمار التسويقي بناءً على بيانات واضحة.
+                </p>
+                <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-purple-950 p-6 rounded-2xl border border-amber-400/60 text-center font-bold text-amber-300 text-sm sm:text-base shadow-2xl">
+                    هدفنا ليس زيادة الإنفاق التسويقي، وإنما بناء منظومة استثمارية قابلة للقياس والتطوير، تساهم في تحويل الحضور الرقمي للشركة إلى فرص تجارية وتعاقدات فعلية.
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center mt-8">
+                <a href="https://kaafmarketing.sa/" target="_blank" rel="noopener noreferrer" class="hover:underline inline-block group">
+                    <p class="text-2xl font-black text-blue-400 group-hover:text-blue-300 transition-colors">مجموعة كاف لتطوير الأعمال</p>
+                    <p class="text-xs sm:text-sm font-semibold text-amber-300 mt-1">شريككم في التطوير والنمو وبناء الفرص التجارية.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-blue-200/70 text-xs sm:text-sm py-8 border-t border-blue-900/80 bg-slate-950/90">
+        <a href="https://kaafmarketing.sa/" target="_blank" rel="noopener noreferrer" class="hover:underline font-extrabold text-blue-300 block mb-1 text-sm sm:text-base">
+            مجموعة كاف لتطوير الأعمال © 2026
+        </a>
+        <p class="text-slate-400 text-xs">دراسة السوق والتحليل التنافسي والخطة التسويقية — شركة كفاءة العمران للاستشارات الهندسية</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add("active");
+                        }, index * 80);
+                    }
+                });
+            }, {
+                threshold: 0.08
+            });
+
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+        });
+    </script>
+</body>
+</html>
